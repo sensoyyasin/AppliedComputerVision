@@ -43,7 +43,7 @@ using namespace cv;
 #define COLOR_CONVERT
 #define SOBEL_TRANSFORM
 #define CANNY_TRANSFORM
-#define DISPLAY_CANNY_TRANSFORM
+//#define DISPLAY_CANNY_TRANSFORM
 #define DISPLAY_SOBEL_TRANSFORM
 
 #define HRES 640

@@ -12,11 +12,11 @@ CFILES= canny.cpp
 SRCS= ${HFILES} ${CFILES}
 OBJS= ${CFILES:.cpp=.o}
 
-all:	canny houghline houghcirc sobel cannycam sobelcam pyrUpDown edgecam capture
+all:	canny_sobel canny houghline houghcirc sobel cannycam sobelcam pyrUpDown edgecam capture
 
 clean:
 	-rm -f *.o *.d
-	-rm -f canny houghline houghcirc cannycam sobelcam edgecam pyrUpDown sobel capture
+	-rm -f canny houghline houghcirc cannycam sobelcam edgecam pyrUpDown sobel capture canny_sobel
 
 houghcirc: houghcirc.o
 	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $@.o `pkg-config --libs opencv4` $(LIBS)
@@ -44,6 +44,10 @@ cannycam: cannycam.o
 
 capture: capture.o
 	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $@.o `pkg-config --libs opencv4` $(LIBS)
+
+canny_sobel: canny_sobel.o
+	$(CC) $(LDFLAGS) $(CFLAGS) -o $@ $@.o `pkg-config --libs opencv4` $(LIBS)
+
 
 depend:
 
